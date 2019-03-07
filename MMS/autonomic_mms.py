@@ -60,3 +60,19 @@ class ConnectPort5004:
         REWIND = 'Rewind'
         FASTFORWARD = 'FastForward'
         GETART = 'GetArt'
+
+class ConnectPort5006:
+    """Connect to MMS via port 5006"""
+    class MradControlCommands(Enum):
+        """Valid port 5006 commands"""
+        MRADALLOFF = 'AllOff'
+        MRADBROWSEALLSOURCE = 'BrowseAllSources'
+        MRADBROWSEALLZONES = 'BrowseAllZones'
+        MRADBROUSESOURCE = 'BrowseSources'
+        MRADBROWSEZONEGRP = 'BrowseZoneGroup'
+        MRADBROWSEZONEGRPS = 'BrowseZoneGroups'
+        MRADBRWOSEZONES = 'BrowseZones'
+        MRADSTATUS = 'GetStatus'
+        MRADMUTEALL = 'MuteAll'
+        MRADPOWER = 'Power'
+      
