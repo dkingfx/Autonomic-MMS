@@ -1,3 +1,7 @@
+"""Autonomic MMS Controls
+
+Interaction mostly through the telnet and control classes.
+"""
 import telnetlib
 import asyncio
 import time
