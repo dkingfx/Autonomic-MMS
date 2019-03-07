@@ -1,5 +1,13 @@
 import telnetlib
+import asyncio
 import time
+import asyncio
+import json
+import logging
+from asyncio import Condition, Lock
+from enum import Enum
+from typing import Any, Dict, List, Union
+
 
 HOST = ("192.168.20.35")
 PORT = ("5004")
@@ -17,3 +25,38 @@ tn.write(command + b"\n")
 
 print("Success!")
 tn.close()
+
+class ConnectPort23:
+    """Connect to MMS via port 23"""
+    class systemCommands(Enum):
+        """Valid port 23 commands"""
+        UPTIME = 'Uptime'
+        BROWSECLIENT = 'BrowseClients'
+        BROWSESOURCE = 'BrowseSources'
+        UPDATE = 'AutoUpdate'
+        REBOOT = 'Reboot'
+        SHUTDOWN = 'Shutdown'
+
+class ConnectPort5004:
+    """Connect to MMS via port 5004"""
+    class controlCommands(Enum):
+        """Valid port 5004 commands"""
+        NOWPLAYING = 'BrowseNowPlaying'
+        STREAMING = 'BrowseServiceAccounts'
+        VOLUMEDOWN = 'VolumeDown'
+        VOLUMEUP = 'VolumeUp'
+        WAIT = 'Wait'
+        SKIPNEXT = 'SkipNext'
+        SKIPPREVIOUS = 'SkipPrevious'
+        SETVOLUME = 'SetVolume'
+        SEEK = 'Seek'
+        REPEAT = 'Repeat'
+        PLAYRADIO = 'PlayRadioStation'
+        PLAYPAUSE = 'PlayPause'
+        PLAYARTIST = 'PlayArtist'
+        PLAYALL = 'PlayAllMusic'
+        MUTE = 'Mute'
+        JUKEBOX = 'JukeBoxMode'
+        REWIND = 'Rewind'
+        FASTFORWARD = 'FastForward'
+        GETART = 'GetArt'
