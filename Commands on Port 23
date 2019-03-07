@@ -1,0 +1,70 @@
+##################################################
+## Commands from Telnet connection via port 23 ##
+##################################################
+
+Autonomic Controls Remote Configuration version 6.1.20180502.1 Release.
+More info found on the Web http://www.Autonomic-Controls.com
+
+Type '?' for help or 'help <command>' for help on <command>.
+
+Welcome. You are logged in.
+?
+
+ACRemoteConfig: Remote Configuration
+===========================================================================
+AutoUpdate                     - Update firmware.
+Banner                         - Display connection banner.
+BrowseClients                  - Returns a sorted list of IDs for all 
+                                 Connected Clients.
+BrowseSources                  - Returns a sorted list of IDs for all 
+                                 configured instances.
+BrowseTimeZones                - Get list of valid TimeZone values.
+cls                            - Clear the ANSI Terminal
+CpuDetails                     - Shows CPU and temp for the local MMS
+Echo                           - Echo text. Good for testing Encoding.
+Exit                           - Close connection.
+Get                            - Get current setting values.
+Login                          - Login to the configuration server.
+NtpSync                        - Synchronize with the currently 
+                                 configured NTP server.
+Ping                           - Echo Pong.
+Reboot                         - Reboot the system.
+RemoteSupport                  - Initiates a remote support call.
+RemoveAccountOAuth             - Remove Account OAuth Tokens.
+ResetToFactoryDefaults         - Reset the system to factory defaults.
+Revert                         - Revert changed setting values.
+Save                           - Save changed setting values.
+Set                            - Set current setting value.
+SetEncoding                    - Sets encoding for current 
+                                 communications channel.
+SetHost                        - Set host name / ip.
+SetLicenseKey                  - Sets a new licens key into the server.
+SetResponseEolZero             - Sets Response EOL delimiter to 0x00.
+SetXmlMode                     - Set XML based responses to None | Lists 
+                                 | All .
+Shutdown                       - Shutdown the system.
+ToggleDelete                   - Toggle current delete flag.
+UploadLogFiles                 - Upload Log files.
+Uptime                         - Report Daemon uptime
+
+HELP: Help And Syntax Provider
+===========================================================================
+Help                           - Display this message
+
+QA: QA
+===========================================================================
+RunQATest                      - Run one or more QA Tests.
+
+BrowseSources
+BeginInstances Total=2 Start=1 Alpha=0 Caption="Instances"
+  Player_A
+  Player_B
+EndInstances NoMore
+
+BrowseClients
+BeginClients Total=1 Start=1 Alpha=0 Caption="Clients"
+  Client {9b13df12-b8cc-2e70-f0d1-0e2951b5f728} "user@192.168.10.253:51942" True
+EndClients NoMore
+
+Uptime
+Uptime "0.01:26:52"

@@ -1,0 +1,443 @@
+#######################################################
+#### Commands from Telnet connection via port 5006 ####
+#######################################################
+
+
+Autonomic Controls MRAD Bridge version 6.1.20180502.1 Release.
+More info found on the Web http://www.Autonomic-Controls.com
+
+Type '?' for help or 'help <command>' for help on <command>.
+
+Server=MAC:ADDRESS:NUMBER
+
+
+?
+
+HELP: Help And Syntax Provider
+===========================================================================
+Help                   - Display this message
+
+MRAD: Multi Room Audio Device
+===========================================================================
+!Autonomic             - Enter command mode for sending abstract MRAD 
+                         commands.
+*Autonomic             - Enter / Exit passthru mode for sending commands 
+                         directly to the MRAD device(s).
+@Autonomic             - Enter passthru mode for sending commands 
+                         directly to the MRAD device(s).
+AllOff                 - Power off all zones.
+Balance                - Set Balance [-20L - +20R] on active or 
+                         specified zone.
+BalanceLeft            - Lower Balance [-20L - +20R] on active or 
+                         specified zone.
+BalanceRight           - Raise Balance [-20L - +20R] on active or 
+                         specified zone.
+Banner                 - Display connection banner.
+Bass                   - Set Bass [-12 - +12] on active or specified 
+                         zone.
+BassDown               - Lower Bass [-12 - +12] on active or specified 
+                         zone.
+BassUp                 - Raise Bass [-12 - +12] on active or specified 
+                         zone.
+BrowseAllSources       - Returns a list of all sources available to any 
+                         zone.
+BrowseAllZones         - Returns a list of all Zones.
+BrowsePageDown         - Pages thru the last Browse command results.
+BrowsePageUp           - Pages thru the last Browse command results.
+BrowsePartyModeInclude - Browse zones included in party mode
+BrowseSources          - Returns a list of sources available to the 
+                         active zone.
+BrowseZoneGroup        - Browse for grouping and ungrouping zones.
+BrowseZoneGroups       - Returns a list of active Zone groups
+BrowseZones            - Returns a list of active Zones.
+BrowseZonesForGroup    - List all zones that can be included in given 
+                         zone group.
+cls                    - Clear the ANSI Terminal
+Echo                   - Echo text. Good for testing Encoding.
+Exit                   - Close connection.
+GetMute                - Get mute on active or specified zone.
+GetStatus              - Returns all parameters that are normally sent 
+                         with a StateChanged. Used to prime local client 
+                         variables.
+GetVersions            - Report Firmware versions
+GetVolume              - Get volume on active or specified zone.
+IdentifyZone           - Play a test tone in specified zone
+Loudness               - Sets the Loudness [true,false,toggle] on active 
+                         or specified zone.
+MaxVolume              - Sets the MaxVolume on active or specified zone.
+MonoDownmix            - Sets the MonoDownmix [true,false,toggle] on 
+                         active or specified zone.
+Mute                   - Set Mute state on active or specified. True / 
+                         False / Toggle
+MuteAll                - Mute on / off / toggle for all zones.
+PartyMode              - Set Party Host mode on active or specified 
+                         zone. [On | Off | Toggle]
+Pause                  - Pause transport control.
+Ping                   - Echo Pong.
+Play                   - Play transport control.
+PlayPause              - Play transport control if currently Paused and 
+                         vice versa.
+Power                  - Set Power state on active or specified zone. On 
+                         / Off / Toggle
+PowerOnVolume          - Sets the PowerOnVolume on active or specified 
+                         zone. Use '0' to disable.
+RecallPreset           - Returns the active player (set prior via 
+                         SetInstance) to the state stored in the preset.
+SetClientType          - Set Client identifier.
+SetClientVersion       - Set Client version.
+SetEncoding            - Sets encoding for current communications 
+                         channel.
+SetHost                - Set host name / ip.
+SetPartyModeInclude    - Include or Exclude Zone from partymode [True | 
+                         False]
+SetResponseEolZero     - Sets Response EOL delimiter to 0x00.
+SetSource              - Selects the active source by GUID or Name or Id.
+SetSourceByName        - Selects the active source by engine friendly 
+                         name.
+SetSourceForGroup      - Selects the active source by GUID or Name or Id 
+                         and sets all zones in the active zone's zone 
+                         group to that source.
+SetXmlMode             - Set XML based responses to None | Lists | All .
+SetZone                - Selects the active zone by GUID or Name or Id.
+SetZoneGroup           - Grouping and ungrouping zones.
+SetZoneGroupTimer      - Set time for a zone or zonegroup to be turned 
+                         off
+SkipNext               - Skip Next transport control.
+SkipPrevious           - Skip Previous transport control.
+SourceIcon             - Set icon of active or specified source.
+SourceName             - Set name of active or specified source.
+Stop                   - Stop transport control.
+StorePreset            - Stores the current state of the active player 
+                         (set prior via SetInstance) for later recall.
+SubscribeEvents        - Turns on or off Events (i.e. track information, 
+                         transport feedback, etc.) for the current zone 
+                         / source.
+SyncTime               - Synchronize Whole-Home amp's clock to 
+                         computer's.
+Time                   - Echo Time.
+Treble                 - Set Treble [-12 - +12] on active or specified 
+                         zone.
+TrebleDown             - Lower Treble [-12 - +12] on active or specified 
+                         zone.
+TrebleUp               - Raise Treble [-12 - +12] on active or specified 
+                         zone.
+Uptime                 - Report Daemon uptime
+Volume                 - Set volume on active or specified zone.
+VolumeDown             - Lower volume on active or specified zone.
+VolumeUp               - Raise volume on active or specified zone.
+ZoneGain               - Set ZoneGain [-12 - +12] on active or specified 
+                         zone.
+ZoneGainDown           - Lower ZoneGain [-12 - +12] on active or 
+                         specified zone.
+ZoneGainUp             - Raise ZoneGain [-12 - +12] on active or 
+                         specified zone.
+ZoneIcon               - Set icon of active or specified zone.
+ZoneName               - Set name of active or specified zone.
+
+
+##########################
+Sample Commands
+##########################
+
+GetStatus
+ReportState Player_A ServerName=mms-1e|MMS-1e
+ReportState Player_A ServerId=0050C2FD2D3B
+ReportState Player_A InstanceName=Player_A
+ReportState Player_A InstanceOriginalName=Player_A
+ReportState Player_A InstanceQualifiedOriginalName=Player_A@0050C2FD2D3B
+ReportState Player_A Running=True
+ReportState Player_A WanAvailable=True
+ReportState Player_A SupportedAudioTypes=Sirius,Pandora,RadioTime,Spotify,Rhapsody,Slacker,Deezer,TIDAL,Murfie,iHeartRadio,AmazonMusic,LocalMask,Airplay
+ReportState Player_A InstanceQualifiedOriginalName=Player_A@0050C2FD2D3B
+ReportState Player_A Scrobbling=-1
+ReportState Player_A Shuffle=False
+ReportState Player_A Repeat=False
+ReportState Player_A OSDSettings={"screenSaverTime":"60","slideshowScale":"Scale to fit","slideshowEffectIn":"None","slideshowTime":"5","slideShowSortOrder":"0","slideshowEffectOut":"None","deviceId":"MMS","screenSaverEnabled":"0","slideshowDisplayNowPlaying":"1","slideshowToast":"1","slideshowOverlapEffects":"0","slideshowRandom":"0","source":"undefined","zone":"*"}
+ReportState Player_A Mute=False
+ReportState Player_A Volume=50
+ReportState Player_A Station=
+ReportState Player_A MetaLabel1=
+ReportState Player_A MetaData1=Track 7 of 30
+ReportState Player_A MetaLabel2=Artist
+ReportState Player_A MetaData2=Adele
+ReportState Player_A MetaLabel3=Album
+ReportState Player_A MetaData3=21 (Deluxe Edition)
+ReportState Player_A MetaLabel4=Track
+ReportState Player_A MetaData4=Take It All
+ReportState Player_A NowPlayingType=Music
+ReportState Player_A TrackDuration=228
+ReportState Player_A MediaTime=228
+ReportState Player_A RadioFrequency=
+ReportState Player_A TitleNumber=0
+ReportState Player_A TrackNumber=7
+ReportState Player_A ContextMenu=True
+ReportState Player_A TrackTime=50
+ReportState Player_A MediaUrl=/srv/Content/Music/Music/Adele/21 (Deluxe Edition)/07 Take It All.mp3
+ReportState Player_A ArtistName=Adele
+ReportState Player_A MediaName=21 (Deluxe Edition)
+ReportState Player_A NowPlayingSrce=WMP
+ReportState Player_A NowPlayingSrceName=Local Music
+ReportState Player_A RatingStyle=None
+ReportState Player_A TrackName=Take It All
+ReportState Player_A NowPlayingGuid={75f0edc3-f914-623c-f824-867e454dbb6a}
+ReportState Player_A LocalQueueOptions=Now, Next, Replace, Append, AddToPlaylist
+ReportState Player_A GraceNoteState=1
+ReportState Player_A QueueMode=True
+ReportState Player_A TotalTracks=30
+ReportState Player_A QueueCounts=LocalMask:30
+ReportState Player_A TrackQueueIndex=7
+ReportState Player_A SupportsMusic=True
+ReportState Player_A SupportsRadio=True
+ReportState Player_A SupportsPodcasts=False
+ReportState Player_A SupportsAudiobooks=False
+ReportState Player_A SupportsPictures=False
+ReportState Player_A SupportsVolumeUpDown=True
+ReportState Player_A SupportsDirectVolume=True
+ReportState Player_A SupportsFavorites=True
+ReportState Player_A SupportsStatus=Done
+ReportState Player_A MediaControl=Play
+ReportState Player_A GainMode=Fixed
+ReportState Player_A SessionStart=StreamingContentAudio
+ReportState Player_A GenreName=Unknown
+ReportState Player_A CurrentPreset=
+ReportState Player_A StationName=
+ReportState Player_A BrowseNowPlayingAvailable=True
+ReportState Player_A MixedQueueNext=False
+ReportState Player_A ThumbsDown=-1
+ReportState Player_A ThumbsUp=-1
+ReportState Player_A Stars=-1
+ReportState Player_A SpotifyEngineName=Player A
+ReportState Player_A AirPlayPort=4000
+ReportState Player_A AirPlayName=Player A
+ReportState Player_A AirPlayPassword=
+ReportState Player_A DeviceReady=True
+ReportState Player_A PrimeAudioHandler=True
+ReportState Player_A TempFolder=L3RtcC8.
+ReportState Player_A PlaybackApplication=AMP
+ReportState Player_A GraceNotePowered=-1
+ReportState Player_A Navigation=NavigatingMusic
+ReportState Player_A MRADSource=0b9178f6-c9c9-1e15-2f83-fb723d95266c
+ReportState Player_A CurrentPlaylist=
+ReportState Player_A NowPlayingAccount=dkingfx@gmail.com
+ReportState Player_A SkipNextAvailable=True
+ReportState Player_A SkipPrevAvailable=True
+ReportState Player_A PlayPauseAvailable=True
+ReportState Player_A ShuffleAvailable=True
+ReportState Player_A RepeatAvailable=True
+ReportState Player_A SeekAvailable=True
+ReportState Player_A MediaGuid=75f0edc3-f914-623c-f824-867e454dbb6a
+ReportState Player_A MediaObjectType=Title
+ReportState Player_A BufferingState=Streaming
+ReportState Player_A PlaybackEngine=VLC
+ReportState Player_A StartedStreamGuid=00000000-0000-0000-0000-000000000000
+ReportState Player_A PlayState=Playing
+ReportState Player_A ForceSoundDeviceCheck=1
+ReportState Player_A PlaylistCount=0
+ReportState Player_A MradZones=10
+ReportState Player_A FavoritesCount=0
+ReportState Player_A PlaylistCount=0
+ReportState Player_A CurrentPlayContext=now
+ReportState Player_A AirplayState=False
+ReportState Player_A NotificationCount=0
+ReportState Player_A IP4List=192.168.20.35
+ReportState Player_A BaseWebUrl=http://192.168.20.35:5005/
+ReportState Player_A S=41,145,119,240,237,216,221
+ReportState Player_A MediaArtChanged=True
+ReportState Player_A MRADServer=192.168.20.35:5006
+ReportState Player_A PlaybackApplication=AMP
+ReportState Player_A Back=False
+ReportState Player_A Forward=False
+StateChanged Player_A GetStatus=Done
+
+##########################
+Sample Commands
+##########################
+
+BrowseNowPlaying
+BeginNowPlaying Total=30 Start=1 Alpha=0 Caption="Queue"
+  Title {f4d1e4de-fa5a-c14d-f3e8-41cc4cb47708} "Rolling In the Deep" "00:03:48" 1 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {c3636581-4052-c73c-696a-8e0007a64dcf} "Rumour Has It" "00:03:43" 2 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {48f0e115-5556-f6cb-5371-6bf97694deb1} "Turning Tables" "00:04:10" 3 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {60d14750-d871-014a-f8be-fe75ca73e2cc} "Don't You Remember" "00:04:03" 4 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {58db8ecd-4324-806d-e2e1-b7d2fd4c71cb} "Set Fire to the Rain" "00:04:03" 5 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {40f89004-5ac5-1168-3f7b-a611d22255c5} "He Won't Go" "00:04:38" 6 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {75f0edc3-f914-623c-f824-867e454dbb6a} "Take It All" "00:03:48" 7 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {29b5c5c8-ad92-a9e7-5031-c606dea88684} "I'll Be Waiting" "00:04:01" 8 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {04bfd39f-f003-c711-90ea-645220592baa} "One and Only" "00:05:48" 9 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {e473b3f1-359c-856a-5485-428a4bd131cd} "Lovesong" "00:05:16" 10 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {fdb0412b-967c-a872-40e3-444783a49c6e} "Someone Like You" "00:04:45" 11 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {357f232a-9b8a-e1c5-5169-686e82069bc3} "I Found a Boy (Bonus Track)" "00:03:37" 12 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {4e786b5f-211e-f90d-118e-b617899e9ebd} "Turning Tables (Live Acoustic)" "00:04:20" 13 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {203c3477-08ea-95b0-a801-6b02b9f4022d} "Don't You Remember (Live Acoustic)" "00:04:18" 14 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {88c156de-81ca-b4e0-5b5d-90e375a95d1f} "Someone Like You (Live Acoustic)" "00:05:14" 15 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {f4d1e4de-fa5a-c14d-f3e8-41cc4cb47708} "Rolling In the Deep" "00:03:48" 1 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {c3636581-4052-c73c-696a-8e0007a64dcf} "Rumour Has It" "00:03:43" 2 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {48f0e115-5556-f6cb-5371-6bf97694deb1} "Turning Tables" "00:04:10" 3 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {60d14750-d871-014a-f8be-fe75ca73e2cc} "Don't You Remember" "00:04:03" 4 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {58db8ecd-4324-806d-e2e1-b7d2fd4c71cb} "Set Fire to the Rain" "00:04:03" 5 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {40f89004-5ac5-1168-3f7b-a611d22255c5} "He Won't Go" "00:04:38" 6 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {75f0edc3-f914-623c-f824-867e454dbb6a} "Take It All" "00:03:48" 7 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {29b5c5c8-ad92-a9e7-5031-c606dea88684} "I'll Be Waiting" "00:04:01" 8 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {04bfd39f-f003-c711-90ea-645220592baa} "One and Only" "00:05:48" 9 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {e473b3f1-359c-856a-5485-428a4bd131cd} "Lovesong" "00:05:16" 10 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {fdb0412b-967c-a872-40e3-444783a49c6e} "Someone Like You" "00:04:45" 11 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {357f232a-9b8a-e1c5-5169-686e82069bc3} "I Found a Boy (Bonus Track)" "00:03:37" 12 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {4e786b5f-211e-f90d-118e-b617899e9ebd} "Turning Tables (Live Acoustic)" "00:04:20" 13 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {203c3477-08ea-95b0-a801-6b02b9f4022d} "Don't You Remember (Live Acoustic)" "00:04:18" 14 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+  Title {88c156de-81ca-b4e0-5b5d-90e375a95d1f} "Someone Like You (Live Acoustic)" "00:05:14" 15 "Adele" "21 (Deluxe Edition)" 2 "" "" ""
+EndNowPlaying NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseArtists
+BeginArtists Total=114 Start=1 Alpha=1 Caption="Artists"
+  Artist {4bc53d58-514e-27cd-f3d1-a40003858a26} "The Academy Is..." -1 "" "" ""
+  Artist {2897df0e-bdaa-fb79-ba2c-fd2b4360bd1e} "Adele" -1 "" "" ""
+  Artist {fc3a3a20-2f00-9a30-9b04-91f00fff1e1b} "Alex Clare" -1 "" "" ""
+  Artist {d64bc38f-6aa2-bf21-2fef-94b2d68bda64} "Aliens Vs Robots" -1 "" "" ""
+  Artist {cac93e8e-6d26-eb0c-c21f-185c8186d646} "The All-American Rejects" -1 "" "" ""
+  Artist {4baf947c-6a4e-724b-fe40-b875e9677241} "Amy Winehouse " -1 "" "" ""
+EndArtists NoMore
+
+BrowseAlbums
+BeginAlbums Total=318 Start=1 Alpha=1 Caption="Albums"
+  Album {350ce181-efd9-fc68-244c-d6c72fa78615} "19 (Deluxe Edition) (Adele)" 1 "" "" ""
+  Album {1d3a64cc-b542-51eb-b7f6-7d1b6686fe92} "21 (Deluxe Edition) (Adele)" 1 "" "" ""
+  Album {88115d12-2b00-e766-f550-80480caaf2e2} "99x Acoustic & MTV Hard Rock Live (Switchfoot)" 1 "" "" ""
+  Album {bafb5505-838b-67f3-76a5-1f222a66f284} "808s & Heartbreak (Kanye West)" 1 "" "" ""
+  Album {6f4f644c-3eda-1a7a-305f-93761df5d688} "2009 Demo (Ethos in Motion)" 1 "" "" ""
+  Album {f8e6d3ae-2714-c8f9-f08a-99f7fd734dc7} "Abbey Road (The Beatles)" 1 "" "" ""
+EndAlbums NoMore
+
+##########################
+Sample Commands
+##########################
+
+BeginAlbumTitles Total=8 Start=1 Alpha=0 Caption="AlbumTitles"
+  Title {97d9baa7-b7f3-2b83-844a-0f370ee8b847} "Midnight in Her Eyes" "00:04:03" 4 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {c1811cb4-3b6e-2283-db8c-31cd69e24657} "Have Love Will Travel" "00:03:05" 5 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {d3583bec-f24d-bc1e-fe29-176c0b770d38} "Hurt Like Mine" "00:03:28" 6 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {d0984f1c-9b4c-f723-4d6b-ef4d1eb8edf2} "Everywhere I Go" "00:05:42" 7 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {48b777fd-2373-a162-5945-593378809969} "No Trust" "00:03:39" 8 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {c5b56270-bece-9ab7-62bf-6ed83fdb46b0} "If You See Me" "00:02:51" 9 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {78f403cf-8596-a568-49fb-138ccbcfe60f} "Hold Me in Your Arms" "00:03:19" 10 "The Black Keys" "thickfreakness" -1 "" "" ""
+  Title {72c04965-1f37-a26b-b18e-c49d928d6da3} "I Cry Alone" "00:02:49" 11 "The Black Keys" "thickfreakness" -1 "" "" ""
+EndAlbumTitles NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseComposers
+BeginComposers Total=8 Start=1 Alpha=0 Caption="Composers"
+  Composer {3f200196-4c1c-c30f-d39d-dca073a575c8} "A. Collins, R. VanZant" -1 "" "" ""
+  Composer {53a129f6-f68c-4f09-4c2e-1eba5ab35ae6} "A. Levine" -1 "" "" ""
+  Composer {e8a87ebb-bbed-5675-eca0-06200c788b13} "A. Levine/J. Carmichael" -1 "" "" ""
+  Composer {9b589d1c-978f-4f81-f356-b65ebaead5a1} "A. Levine/J. Carmichael/R. Dusick" -1 "" "" ""
+  Composer {b05f69ff-da87-ab1a-30f1-25499cdf6740} "The Academy Is..." -1 "" "" ""
+  Composer {cfa693c9-f3b4-f2c9-8572-a685f4d34cf0} "Adam Horvitz/Adam Yauch/John King/Justin Stanley/Matt Dike/Michael Diamond/Michael Simpson/Nikka Costa" -1 "" "" ""
+  Composer {e994fad5-f09f-7fe3-98d9-40b0fa65336e} "Adam Levine" -1 "" "" ""
+  Composer {3959e6c8-b343-466f-feae-37f8e90fb410} "Adam Levine/Jesse Carmichael" -1 "" "" ""
+  EndComposers NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseGenres
+BeginGenres Total=49 Start=1 Alpha=1 Caption="Genres"
+  Genre {a69d211a-c866-0650-1b73-9ebfb431d434} "<Unknown>" -1 "" "" ""
+  Genre {2120f802-5f4c-5961-e709-89b401765487} "Acoustic" -1 "" "" ""
+  Genre {ba6c2397-8a60-3b99-bbaa-5ae7d0aad3f8} "Alt. Rock" -1 "" "" ""
+  Genre {b96a4e79-29a2-907a-cb18-54b228e738d5} "Alternative" -1 "" "" ""
+  Genre {e6e94f19-9ba7-ea71-7146-973ded8d5fca} "Alternative & Punk" -1 "" "" ""
+  Genre {86760a13-3457-2835-df30-a5b3ee8a99c5} "Alternative Rock" -1 "" "" ""
+EndGenres NoMore
+
+
+##########################
+Sample Commands
+##########################
+
+BrowsePlaylists
+BeginPlaylists Total=0 Start=1 Alpha=1 Caption="Playlists"
+EndPlaylists NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseRadiosources
+BeginRadioSources Total=4 Start=1 Alpha=0 Caption="Radio sources"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000040000} "Amazon Music" -1 "" "" "BrowseRadioGenres"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000010000} "iHeartRadio" -1 "" "" "BrowseRadioGenres"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000000010} "Pandora Internet Radio" -1 "" "" "BrowseRadioStations"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000000020} "TuneIn Radio" -1 "" "" "BrowseRadioGenres"
+EndRadioSources NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseRadioSources
+BeginRadioSources Total=4 Start=1 Alpha=0 Caption="Radio sources"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000040000} "Amazon Music" -1 "" "" "BrowseRadioGenres"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000010000} "iHeartRadio" -1 "" "" "BrowseRadioGenres"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000000010} "Pandora Internet Radio" -1 "" "" "BrowseRadioStations"
+  RadioSource {fbbcedb1-af64-4c3f-bfe5-000000000020} "TuneIn Radio" -1 "" "" "BrowseRadioGenres"
+EndRadioSources NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseRadioGenres
+BeginRadioGenres Total=26 Start=1 Alpha=1 Caption="Radio Genres"
+  RadioGenre {49385d1b-b4a9-48db-83d9-5ceb972fa3fe} "80s & 90s Hits"
+  RadioGenre {440d37a5-bb56-4020-8810-da303fab972f} "Alternative"
+  RadioGenre {59c58236-b157-4593-a806-531e2308636d} "Christian & Gospel"
+  RadioGenre {b6b50ce0-09cc-4b2c-9b39-28ca4f3a877a} "Classic Rock"
+  RadioGenre {343b1248-9d94-4a65-ade2-13383aa0214e} "Classical"
+  RadioGenre {e3932ef3-852e-41ae-a6e0-5294ecf3bb58} "College Radio"
+  RadioGenre {1285ea16-cb1d-4681-9e69-1c4b100edb39} "Comedy"
+  RadioGenre {4653f73c-4514-44f8-af3c-3fcc4b45802c} "Country"
+  RadioGenre {0ca31be3-72f4-4dc2-b709-0eca73765fb0} "Dance"
+  RadioGenre {6bdcab36-4624-486f-9acc-eacee4b35601} "dkingfx@gmail.com"
+  RadioGenre {5f313f90-501a-478f-9493-75501d59036d} "Hip Hop and R&B"
+  RadioGenre {5d307229-8016-4082-92ee-b9faf3b90920} "Holiday"
+  RadioGenre {96514128-2153-47c7-86d9-cc14ae9adeb1} "International"
+  RadioGenre {5bd98f41-2165-4a67-86b7-f05b75ac8a41} "Jazz"
+  RadioGenre {7d4d7ea6-781a-4673-ae6d-32faf6637e88} "Kids & Family"
+  RadioGenre {64e8ce20-6fe0-4185-b72d-7732e2327de1} "Mexico"
+  RadioGenre {8b78bff6-9f0e-45b1-a803-34464306df33} "Mix & Variety"
+  RadioGenre {ec813457-acb3-4ef3-9774-c2fba4fb0d42} "News & Talk"
+  RadioGenre {49256921-33ea-4e32-a34f-f0e9d9972eed} "Oldies"
+  RadioGenre {49c3daeb-48ab-4f60-8a2a-13da4096c5b0} "Public Radio"
+  RadioGenre {1a840bd8-3fcc-4fc6-a13d-c2b19737b20d} "Reggae & Island"
+  RadioGenre {9062af3b-9ae4-4159-a1a8-edc9c0567716} "Rock"
+  RadioGenre {3dab04bf-8952-4bf9-9b83-0ea3b80f478e} "Soft Rock"
+  RadioGenre {58b53443-c78e-4f94-9344-19b323f5d37c} "Spanish"
+  RadioGenre {a991de31-0b8e-42fe-a0af-819e4ce579fd} "Sports"
+  RadioGenre {256d0aa0-e014-464d-ab5f-4923f1662f2d} "Top 40 & Pop"
+EndRadioGenres NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseRadioStations
+BeginRadioStations Total=611 Start=1 Alpha=0 Caption="Radio stations" 
+  RadioStation {f4fc02f7-7fb6-c0f3-f574-4321f761e223} "Z100 Portland" "Portland's Hit Music Station " -1 "" ""
+  RadioStation {1565d18f-2019-31bb-0bcb-4313024236c6} "Z102.3" "Erie's Classic Rock" -1 "" ""
+  RadioStation {2ea1e086-a39b-f9cd-214c-1d6f7607f2b4} "Z104 Madison" "Madison‚Äôs #1 Hit Music Station" -1 "" ""
+  RadioStation {372b59ba-0029-51ee-7db1-c47dbbbc4aed} "Z104.1" "Jefferson City's Classic Hits" -1 "" ""
+  RadioStation {9c3c6601-1ce0-ac17-f470-14bb1fcedb47} "Z104.3" "Baltimore‚Äôs #1 Hit Music Station" -1 "" ""
+  RadioStation {aa0c4d74-8364-b1eb-4288-2098af7bb718} "Z105" "Suncoast Classic Rock" -1 "" ""
+  RadioStation {ce70b5ad-e54a-cc6c-427e-e8e394ee65c7} "Z105.3" "Tu Estaci√≥n En Atlanta Para Super Hits" -1 "" ""
+  RadioStation {ba268eca-bb9d-c606-4533-e4cea6d2bad7} "Z106.7 Jackson" "John Boy & Billy Classic Rock" -1 "" ""
+  RadioStation {c5629c78-7a64-69c5-91b4-21ac7c34cf06} "Z107" "Seacoast‚Äôs #1 Hit Music Station" -1 "" ""
+  RadioStation {f59710fa-e15b-4e8d-8f64-b9260586f1ea} "Z107.7 St. Louis" "STL‚Äôs #1 Hit Music Station" -1 "" ""
+  RadioStation {b3b429ee-2617-2d6e-6e2e-d4d12e7df8fa} "Z89" "Your Party Station | Syracuse" -1 "" ""
+EndRadioStations NoMore
