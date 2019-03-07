@@ -1,0 +1,218 @@
+
+
+
+#######################################################
+#### Commands from Telnet connection via port 5006 ####
+#######################################################
+
+
+Autonomic Controls MRAD Bridge version 6.1.20180502.1 Release.
+More info found on the Web http://www.Autonomic-Controls.com
+
+Type '?' for help or 'help <command>' for help on <command>.
+
+Server=MAC:ADDRESS:NUMBER
+
+
+?
+
+HELP: Help And Syntax Provider
+===========================================================================
+Help                   - Display this message
+
+MRAD: Multi Room Audio Device
+===========================================================================
+!Autonomic             - Enter command mode for sending abstract MRAD 
+                         commands.
+*Autonomic             - Enter / Exit passthru mode for sending commands 
+                         directly to the MRAD device(s).
+@Autonomic             - Enter passthru mode for sending commands 
+                         directly to the MRAD device(s).
+AllOff                 - Power off all zones.
+Balance                - Set Balance [-20L - +20R] on active or 
+                         specified zone.
+BalanceLeft            - Lower Balance [-20L - +20R] on active or 
+                         specified zone.
+BalanceRight           - Raise Balance [-20L - +20R] on active or 
+                         specified zone.
+Banner                 - Display connection banner.
+Bass                   - Set Bass [-12 - +12] on active or specified 
+                         zone.
+BassDown               - Lower Bass [-12 - +12] on active or specified 
+                         zone.
+BassUp                 - Raise Bass [-12 - +12] on active or specified 
+                         zone.
+BrowseAllSources       - Returns a list of all sources available to any 
+                         zone.
+BrowseAllZones         - Returns a list of all Zones.
+BrowsePageDown         - Pages thru the last Browse command results.
+BrowsePageUp           - Pages thru the last Browse command results.
+BrowsePartyModeInclude - Browse zones included in party mode
+BrowseSources          - Returns a list of sources available to the 
+                         active zone.
+BrowseZoneGroup        - Browse for grouping and ungrouping zones.
+BrowseZoneGroups       - Returns a list of active Zone groups
+BrowseZones            - Returns a list of active Zones.
+BrowseZonesForGroup    - List all zones that can be included in given 
+                         zone group.
+cls                    - Clear the ANSI Terminal
+Echo                   - Echo text. Good for testing Encoding.
+Exit                   - Close connection.
+GetMute                - Get mute on active or specified zone.
+GetStatus              - Returns all parameters that are normally sent 
+                         with a StateChanged. Used to prime local client 
+                         variables.
+GetVersions            - Report Firmware versions
+GetVolume              - Get volume on active or specified zone.
+IdentifyZone           - Play a test tone in specified zone
+Loudness               - Sets the Loudness [true,false,toggle] on active 
+                         or specified zone.
+MaxVolume              - Sets the MaxVolume on active or specified zone.
+MonoDownmix            - Sets the MonoDownmix [true,false,toggle] on 
+                         active or specified zone.
+Mute                   - Set Mute state on active or specified. True / 
+                         False / Toggle
+MuteAll                - Mute on / off / toggle for all zones.
+PartyMode              - Set Party Host mode on active or specified 
+                         zone. [On | Off | Toggle]
+Pause                  - Pause transport control.
+Ping                   - Echo Pong.
+Play                   - Play transport control.
+PlayPause              - Play transport control if currently Paused and 
+                         vice versa.
+Power                  - Set Power state on active or specified zone. On 
+                         / Off / Toggle
+PowerOnVolume          - Sets the PowerOnVolume on active or specified 
+                         zone. Use '0' to disable.
+RecallPreset           - Returns the active player (set prior via 
+                         SetInstance) to the state stored in the preset.
+SetClientType          - Set Client identifier.
+SetClientVersion       - Set Client version.
+SetEncoding            - Sets encoding for current communications 
+                         channel.
+SetHost                - Set host name / ip.
+SetPartyModeInclude    - Include or Exclude Zone from partymode [True | 
+                         False]
+SetResponseEolZero     - Sets Response EOL delimiter to 0x00.
+SetSource              - Selects the active source by GUID or Name or Id.
+SetSourceByName        - Selects the active source by engine friendly 
+                         name.
+SetSourceForGroup      - Selects the active source by GUID or Name or Id 
+                         and sets all zones in the active zone's zone 
+                         group to that source.
+SetXmlMode             - Set XML based responses to None | Lists | All .
+SetZone                - Selects the active zone by GUID or Name or Id.
+SetZoneGroup           - Grouping and ungrouping zones.
+SetZoneGroupTimer      - Set time for a zone or zonegroup to be turned 
+                         off
+SkipNext               - Skip Next transport control.
+SkipPrevious           - Skip Previous transport control.
+SourceIcon             - Set icon of active or specified source.
+SourceName             - Set name of active or specified source.
+Stop                   - Stop transport control.
+StorePreset            - Stores the current state of the active player 
+                         (set prior via SetInstance) for later recall.
+SubscribeEvents        - Turns on or off Events (i.e. track information, 
+                         transport feedback, etc.) for the current zone 
+                         / source.
+SyncTime               - Synchronize Whole-Home amp's clock to 
+                         computer's.
+Time                   - Echo Time.
+Treble                 - Set Treble [-12 - +12] on active or specified 
+                         zone.
+TrebleDown             - Lower Treble [-12 - +12] on active or specified 
+                         zone.
+TrebleUp               - Raise Treble [-12 - +12] on active or specified 
+                         zone.
+Uptime                 - Report Daemon uptime
+Volume                 - Set volume on active or specified zone.
+VolumeDown             - Lower volume on active or specified zone.
+VolumeUp               - Raise volume on active or specified zone.
+ZoneGain               - Set ZoneGain [-12 - +12] on active or specified 
+                         zone.
+ZoneGainDown           - Lower ZoneGain [-12 - +12] on active or 
+                         specified zone.
+ZoneGainUp             - Raise ZoneGain [-12 - +12] on active or 
+                         specified zone.
+ZoneIcon               - Set icon of active or specified zone.
+ZoneName               - Set name of active or specified zone.
+
+##########################
+Sample Commands
+##########################
+
+BrowseZones
+BeginZones Total=4 Start=1 Alpha=0 Caption="Zones"
+  Zone {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9"
+  Zone {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10"
+  Zone {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11"
+  Zone {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12"
+EndZones NoMore
+
+##########################
+Sample Commands
+##########################
+
+BrowseZones
+BeginZones Total=4 Start=1 Alpha=0 Caption="Zones"
+  Zone {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9"
+  Zone {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10"
+  Zone {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11"
+  Zone {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12"
+EndZones NoMore
+ZoneName
+ZoneName Ok
+ZoneIcon
+Error: Value cannot be null.
+                            Parameter name: value
+BrowsePageDown
+BeginZones Total=4 Start=1 Alpha=0 Caption="Zones"
+  Zone {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9"
+  Zone {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10"
+  Zone {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11"
+  Zone {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12"
+EndZones NoMore
+BrowsePartyModeInclude
+BeginPartyModeInclude Total=4 Start=1 Alpha=0 Caption="PartyModeInclude"
+  PartyModeInfo {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9" true "00000000-0000-0000-0000-000000000000"
+  PartyModeInfo {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10" true "00000000-0000-0000-0000-000000000000"
+  PartyModeInfo {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11" true "00000000-0000-0000-0000-000000000000"
+  PartyModeInfo {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12" true "00000000-0000-0000-0000-000000000000"
+EndPartyModeInclude NoMore
+BrowseSources
+BeginSources Total=3 Start=1 Alpha=0 Caption="Sources"
+  Source {000027f6-88a5-30c9-c23b-256dc61b788a} "Echo Dot"
+  Source {0b9178f6-c9c9-1e15-2f83-fb723d95266c} "Player A"
+  Source {1aa079be-c521-600c-a546-b1fdc0d7f34e} "Player B"
+EndSources NoMore
+BrowseZoneGroup
+BeginZoneGroup Total=4 Start=1 Alpha=0 Caption="ZoneGroup"
+  ZoneGroupMember {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9" Zone 0
+  ZoneGroupMember {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10" Zone 1
+  ZoneGroupMember {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11" Zone 0
+  ZoneGroupMember {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12" Zone 0
+EndZoneGroup NoMore
+BrowseZoneGroups
+BeginZoneGroups Total=4 Start=1 Alpha=0 Caption="ZoneGroups"
+  ZoneGroup {00000000-0000-4e20-0000-000000000000} "ZG_2"
+  ZoneGroup {00000009-0000-0000-0000-000000000000} "ZG_1"
+  ZoneGroup {0000000b-0000-0000-0000-000000000000} "ZG_3"
+  ZoneGroup {0000000c-0000-0000-0000-000000000000} "ZG_4"
+EndZoneGroups NoMore
+BrowseZonesForGroup
+BeginZones Total=4 Start=1 Alpha=0 Caption="Zones"
+  Zone {00000009-88a5-30c9-c23b-256dc61b788a} "Zone 9"
+  Zone {0000000a-88a5-30c9-c23b-256dc61b788a} "Zone 10"
+  Zone {0000000b-88a5-30c9-c23b-256dc61b788a} "Zone 11"
+  Zone {0000000c-88a5-30c9-c23b-256dc61b788a} "Zone 12"
+EndZones NoMore
+SetSource
+Source "Player A"
+SetSourceByName
+SourceByName "0"
+BeginZoneGroups Total=4 Start=1 Alpha=0 Caption="ZoneGroups"
+  ZoneGroup {00000009-0000-0000-0000-000000000000} "ZG_1"
+  ZoneGroup {0000000a-0000-0000-0000-000000000000} "ZG_2"
+  ZoneGroup {0000000b-0000-0000-0000-000000000000} "ZG_3"
+  ZoneGroup {0000000c-0000-0000-0000-000000000000} "ZG_4"
+EndZoneGroups NoMore

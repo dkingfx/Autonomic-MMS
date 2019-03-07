@@ -1,4 +1,4 @@
-import telnetlib∏
+import telnetlib
 import time
 
 HOST = ("192.168.20.35")
@@ -11,7 +11,7 @@ tn.write(command + b"\n")
 ret1 = tn.read_eager()
 print(ret1)
 tn.write(b"play\n")
-ret2 = tn.read_until(b"Ok", timeout = 5)
+ret2 = tn.read_until(b"Ok", timeout=5)
 print(ret2)
 tn.write(command + b"\n")
 
