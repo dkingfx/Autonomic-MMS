@@ -26,19 +26,16 @@ tn.write(command + b"\n")
 print("Success!")
 tn.close()
 
-class ConnectPort23:
-    """Connect to MMS via port 23"""
+class ControlOverPort23:
+    """Control Autonomic-MMS via port 23"""
     class systemCommands(Enum):
         """Valid port 23 commands"""
         UPTIME = 'Uptime'
-        BROWSECLIENT = 'BrowseClients'
-        BROWSESOURCE = 'BrowseSources'
-        UPDATE = 'AutoUpdate'
         REBOOT = 'Reboot'
         SHUTDOWN = 'Shutdown'
 
-class ConnectPort5004:
-    """Connect to MMS via port 5004"""
+class ControlOverPort5004:
+    """Control Autonomic-MMS via port 5004"""
     class controlCommands(Enum):
         """Valid port 5004 commands"""
         NOWPLAYING = 'BrowseNowPlaying'
@@ -61,8 +58,8 @@ class ConnectPort5004:
         FASTFORWARD = 'FastForward'
         GETART = 'GetArt'
 
-class ConnectPort5006:
-    """Connect to MMS via port 5006"""
+class controlOverPort5006:
+    """Control Autonomic-MMS via port 5006"""
     class MradControlCommands(Enum):
         """Valid port 5006 commands"""
         MRADALLOFF = 'AllOff'
