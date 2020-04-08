@@ -1,16 +1,17 @@
 import asyncio
 
+
 async def tcp_echo_client(message):
     reader, writer = await asyncio.open_connection(
-        '192.168.10.35', 5004)
+        '192.168.10.35', 5006)
 
-    print(f'Send Command: {message!r}')
+    print(f'Send: {message!r}')
     writer.write(message + b"\n")
 
     data = await reader.read(100)
-    print(data)
+    print(f'Received: {data.decode()!r}')
 
-    print("Command Received!  Closing")
+    print("Connection Closed")
     writer.close()
 
-asyncio.run(tcp_echo_client(b'stop'))
+asyncio.run(tcp_echo_client(b'Ping'))
