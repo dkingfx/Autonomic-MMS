@@ -33,6 +33,16 @@ tn.close()
 Note: Basic test to stablish a connection and send command. The above code connects to the Mirage Media Server 
 and sends the Play command. The server receives the command and the current song or radio streams starts playing. 
 """
+class Autonomic:
+    """ Implements a python API for selected commands to the Mirage system.
+ """
+    def __init__(self, host, port):
+        """ Initialise Monoprice class """
+
+        self._host = host
+        self._port = int(port)
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self._last_send = time.time() 
 
 class ControlOverPort23:
     """Connect to MMS via port 23"""
