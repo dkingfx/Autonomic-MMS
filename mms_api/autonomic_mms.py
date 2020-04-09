@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Union
 HOST = ("192.168.10.35")
 PORT = ("5004")
 
-command = b"Play"
+command = b"Ping"
 
 tn = telnetlib.Telnet(HOST, PORT)
 tn.write(command + b"\n")
@@ -29,10 +29,10 @@ tn.write(command + b"\n")
 
 print("Success!")
 tn.close()
-'''
+"""
 Note: Basic test to stablish a connection and send command. The above code connects to the Mirage Media Server 
 and sends the Play command. The server receives the command and the current song or radio streams starts playing. 
-'''
+"""
 
 class ControlOverPort23:
     """Connect to MMS via port 23"""
