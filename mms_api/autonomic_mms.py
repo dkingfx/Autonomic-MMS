@@ -5,7 +5,7 @@ Interaction mostly through the telnet and control classes.
 import telnetlib
 import asyncio
 import time
-import asyncio
+import sys
 import json
 import logging
 from asyncio import Condition, Lock
