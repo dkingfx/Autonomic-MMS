@@ -29,6 +29,10 @@ tn.write(command + b"\n")
 
 print("Success!")
 tn.close()
+'''
+Note: Basic test to stablish a connection and send command. The above code connects to the Mirage Media Server 
+and sends the Play command. The server receives the command and the current song or radio streams starts playing. 
+'''
 
 class ControlOverPort23:
     """Connect to MMS via port 23"""
