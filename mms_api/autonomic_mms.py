@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Union
 HOST = ("192.168.20.35")
 PORT = ("5004")
 
-command = b"stop"
+command = b"Play"
 
 tn = telnetlib.Telnet(HOST, PORT)
 tn.write(command + b"\n")
