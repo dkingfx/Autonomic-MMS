@@ -13,7 +13,7 @@ from enum import Enum
 from typing import Any, Dict, List, Union
 
 
-HOST = ("192.168.20.35")
+HOST = ("192.168.10.35")
 PORT = ("5004")
 
 command = b"Play"
