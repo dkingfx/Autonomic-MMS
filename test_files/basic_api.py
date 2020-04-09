@@ -44,12 +44,8 @@ class Autonomic:
         # Used to ensure only one thread sends commands to the Russound
         self.lock = threading.Lock()
 
-    def connect(self, command, ):
-        """ Toggle mute on/off for a zone
-        Note: Not tested (acambitsis) """
-
-        send_msg = self.create_send_message("Mute",
-                                            command)
+    def connect(self):
+        send_msg = self.create_send_message("Ping")
         self.send_data(send_msg)
         self.get_response_message()  # Clear response buffer
 
