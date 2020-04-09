@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Union
 HOST = ("192.168.20.35")
 PORT = ("5004")
 
-command = b"play"
+command = b"stop"
 
 tn = telnetlib.Telnet(HOST, PORT)
 tn.write(command + b"\n")
@@ -64,7 +64,7 @@ class ControlOverPort5004:
 
 class controlOverPort5006:
     """Connect to MMS via port 5006"""
-    class MradControlCommands(Enum):
+    class MRADControlCommands(Enum):
         """Valid port 5006 commands"""
         MRADALLOFF = 'AllOff'
         MRADBROWSEALLSOURCE = 'BrowseAllSources'
