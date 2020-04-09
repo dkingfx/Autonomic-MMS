@@ -1,7 +1,7 @@
 """ Used for adhoc testing.  in time can create formal tests. """
 
 import logging
-import test
+from test_files.basic_api
 import time
 
 IP_ADDRESS = '192.168.10.35'

@@ -61,34 +61,32 @@ class Autonomic:
         except:
             return False
 
-    def set_volume(self, controller, zone, volume):
+    def set_volume(self, controller, volume):
         """ Set volume for zone to specific value.
         Divide the volume by 2 to translate to a range (0..50) as expected by Russound (Even thought the
         keypads show 0..100).
         """
 
         _LOGGER.debug(
-            "Begin - controller= %s, zone= %s, change volume to %s", controller, zone, volume)
+            "Begin - controller= %s, zone= %s, change volume to %s", controller, volume)
         send_msg = self.create_send_message("SetVolume",
-                                            controller, zone, volume // 2)
+                                            controller, volume // 2)
         try:
             self.lock.acquire()
-            _LOGGER.debug('Zone %s - acquired lock for ', zone)
             self.send_data(send_msg)
-            _LOGGER.debug("Zone %s - sent message %s", zone, send_msg)
+            _LOGGER.debug("Zone %s - sent message %s", send_msg)
             self.get_response_message()  # Clear response buffer
         finally:
             self.lock.release()
-            _LOGGER.debug("Zone %s - released lock for ", zone)
             _LOGGER.debug(
                 "End - controller %s, zone %s, volume set to %s.\n", controller, zone, volume)
 
-    def toggle_mute(self, controller, zone):
+    def toggle_mute(self, controller):
         """ Toggle mute on/off for a zone
         Note: Not tested (acambitsis) """
 
         send_msg = self.create_send_message("Mute",
-                                            controller, zone)
+                                            controller)
         self.send_data(send_msg)
         self.get_response_message()  # Clear response buffer
 
