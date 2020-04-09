@@ -31,10 +31,10 @@ class Autonomic:
         try:
             self.sock.connect((self._host, self._port))
             _LOGGER.info(
-                "Successfully connected to server on %s:%s", self._host, self._port)
+                "Successfully connected to Russound on %s:%s", self._host, self._port)
             return True
         except socket.error as msg:
-            _LOGGER.error("Error trying to connect to server.")
+            _LOGGER.error("Error trying to connect to Russound controller.")
             _LOGGER.error(msg)
             return False
 
@@ -47,8 +47,12 @@ class Autonomic:
             return False
 
 
-def test():
-    Print("Conected")
-
-
-test()
+    def __exit__(self, exception_type, exception_value, traceback):
+        """ Close connection to gateway """
+        try:
+            self.sock.close()
+            _LOGGER.info("Closed connection to Russound on %s:%s",
+                         self._host, self._port)
+        except socket.error as msg:
+            _LOGGER.error("Couldn't disconnect")
+            _LOGGER.error(msg)
