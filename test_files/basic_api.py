@@ -44,23 +44,14 @@ class Autonomic:
         # Used to ensure only one thread sends commands to the Russound
         self.lock = threading.Lock()
 
-    def connect(self):
-        """ Connect to the tcp gateway
-        Allow for this function to be keypad agnostic
-        If keypad value is omitted, then set it to the hex value of 70 which is the recommended value for an external
-        device controlling the system (top of pg 3 of cav6.6_rnet_protocol_v1.01.00.pdf). (In fact I don't know under
-        what circumstances we would actually want to pass a keypadID at all).
-        """
+    def connect(self, command, ):
+        """ Toggle mute on/off for a zone
+        Note: Not tested (acambitsis) """
 
-        try:
-            self.sock.connect((self._host, self._port))
-            _LOGGER.info(
-                "Successfully connected to Russound on %s:%s", self._host, self._port)
-            return True
-        except socket.error as msg:
-            _LOGGER.error("Error trying to connect to Russound controller.")
-            _LOGGER.error(msg)
-            return False
+        send_msg = self.create_send_message("Mute",
+                                            command)
+        self.send_data(send_msg)
+        self.get_response_message()  # Clear response buffer
 
     def is_connected(self):
         """ Check we are connected """
