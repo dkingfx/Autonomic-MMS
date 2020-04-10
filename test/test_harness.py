@@ -17,4 +17,4 @@ def test1():
 
 
 # Run test 1...
-print(test1)
+test1()
