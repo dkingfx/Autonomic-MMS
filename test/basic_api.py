@@ -1,9 +1,6 @@
 """
 Autonomic Mirage Media Server interface (used by eSeries AMPS and Media Streamers)
 
-Base on code from Russound RNT.
-Copyright (c) 2014 Neil Lathwood <https://github.com/laf/ http://www.lathwood.co.uk/>
-
 This program is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or (at your
