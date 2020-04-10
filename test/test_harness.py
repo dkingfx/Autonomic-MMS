@@ -12,7 +12,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 def test1():
-    x = autonomic.Autonomic(IP_ADDRESS, PORT)
+    x = basic_api.Autonomic(IP_ADDRESS, PORT)
     x.connect()
 
 
