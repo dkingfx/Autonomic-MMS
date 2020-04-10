@@ -13,7 +13,7 @@ _LOGGER = logging.getLogger(__name__)
 
 def test1():
     x = basic_api.Autonomic(IP_ADDRESS, PORT)
-    x.connect()
+    x.send_command("command")
 
 
 # Run test 1...
