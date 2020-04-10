@@ -11,10 +11,10 @@ logging.basicConfig(filename='autonomic_mms_debugging.log', level=logging.DEBUG,
 _LOGGER = logging.getLogger(__name__)
 
 
-def test1():
+def ping_server():
     x = autonomic.Autonomic(IP_ADDRESS, PORT)
     x.connect()
 
 
 # Run test 4...
-test1()
+ping_server()
