@@ -1,7 +1,7 @@
 """ Used for adhoc testing.  in time can create formal tests. """
 
 import logging
-import test.basic_api
+import basic_api
 import time
 
 IP_ADDRESS = '192.168.10.35'
@@ -12,7 +12,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 def test1():
-    x = mms.Autonomic(IP_ADDRESS, PORT)
+    x = autonomic.Autonomic(IP_ADDRESS, PORT)
     x.connect()
 
 
