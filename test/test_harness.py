@@ -14,6 +14,7 @@ _LOGGER = logging.getLogger(__name__)
 def test1():
     x = basic_api.Autonomic(HOST, PORT)
     x.telnet_command("Play")
+    x.telnet_command("SkipNext")
 
 
 # Run test 1...
