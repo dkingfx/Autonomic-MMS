@@ -119,14 +119,6 @@ class Autonomic:
     def create_response_signature(self, string_message, zone):
         """ Basic helper function to keep code clean for defining a response message signature """
 
-        zz = ''
-        if zone is not None:
-            # RNET requires zone value to be zero based
-            zz = hex(int(zone)-1).replace('0x', '')
-        string_message = string_message.replace(
-            '@zz', zz)  # Replace zone parameter
-        return string_message
-
     def send_data(self, data, delay=COMMAND_DELAY):
         """ Send data to connected gateway """
 
