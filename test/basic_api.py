@@ -13,11 +13,9 @@ the source code distribution for details.
 The Autonomic Mirage Media Server IP protocol is documented in mcs_3.0_IP_Control_Protocol.pdf
 which are stored in the source code repo.
 """
-
+import telnetlib
 import logging
 import time
-import socket
-import threading
 
 _LOGGER = logging.getLogger(__name__)
 # Recommendation is that this should be at leat 100ms delay to ensure subsequent commands
@@ -31,36 +29,31 @@ class Autonomic:
     """ Implements a python API for selected commands to the Autonomic Mirage system using TCP protocol.
     """
 
-    _sem_comm = 0
-
     def __init__(self, host, port):
-        """ Initialise Autonomic class """
-
+        """Initialize the Autonomic device."""
         self._host = host
-        self._port = int(port)
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # Used to ensure only one thread sends commands to the Russound
-        self.lock = threading.Lock()
+        self._port = port
 
-    def send_command(self, message):
-        """ Send data to connected gateway """
+    def telnet_request(cls, telnet, command, all_lines=False):
+        """Execute `command` and return the response."""
+        _LOGGER.debug("Sending: %s", command)
+        telnet.write(command.encode("ASCII") + b"\r")
+        lines = []
+        while True:
+            line = telnet.read_until(b"\r", timeout=0.2)
+            if not line:
+                break
+            lines.append(line.decode("ASCII").strip())
+            _LOGGER.debug("Received: %s", line)
 
-        try:
+        if all_lines:
+            return lines
+        return lines[0] if lines else ""
 
-            # Send data
-            message = b'Play'
-            print('sending {!r}'.format(message))
-            self.sock.sendall(message + b"\n")
-
-            # Look for the response
-            amount_received = 0
-            amount_expected = len(message)
-
-            while amount_received < amount_expected:
-                data = self.sock.recv(1024)
-                amount_received += len(data)
-                print('received {!r}'.format(data))
-
-        finally:
-            print('closing socket')
-            self.sock.close()
+    def telnet_command(self, command):
+        """Establish a telnet connection and sends `command`."""
+        telnet = telnetlib.Telnet(self._host, self._port)
+        _LOGGER.debug("Sending: %s", command)
+        telnet.write(command.encode("ASCII") + b"\r")
+        telnet.read_very_eager()  # skip response
+        telnet.close()
