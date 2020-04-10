@@ -32,7 +32,7 @@ class Autonomic:
     def __init__(self, host, port):
         """Initialize the Autonomic device."""
         self._host = host
-        self._port = port
+        self._port = int(port)
 
     def telnet_request(cls, telnet, command, all_lines=False):
         """Execute `command` and return the response."""

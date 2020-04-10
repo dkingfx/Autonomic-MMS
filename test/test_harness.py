@@ -13,7 +13,7 @@ _LOGGER = logging.getLogger(__name__)
 
 def test1():
     x = basic_api.Autonomic(IP_ADDRESS, PORT)
-    x.telnet_command()
+    x.telnet_command("Play")
 
 
 # Run test 1...
