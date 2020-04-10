@@ -16,5 +16,5 @@ def test1():
     x.connect()
 
 
-# Run test 4...
-test1()
+# Run test 1...
+print(test1)
