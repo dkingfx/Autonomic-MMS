@@ -191,7 +191,7 @@ class PioneerDevice(MediaPlayerDevice):
 
     def turn_off(self):
         """Turn off media player."""
-        self.telnet_command("PowerOff")
+        self.telnet_command("Power Off")
 
     def volume_up(self):
         """Volume up media player."""
@@ -212,7 +212,7 @@ class PioneerDevice(MediaPlayerDevice):
 
     def turn_on(self):
         """Turn the media player on."""
-        self.telnet_command("PowerOn")
+        self.telnet_command("Power On")
 
     def media_play(self):
         """Send play command."""
