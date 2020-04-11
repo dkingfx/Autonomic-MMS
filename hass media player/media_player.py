@@ -1,7 +1,7 @@
 """Support for interfacing with Russound via RNET Protocol."""
 import logging
 
-from autonomic.autononic_control import Russound
+import test.basic_api
 import voluptuous as vol
 
 from homeassistant.components.media_player import PLATFORM_SCHEMA, MediaPlayerDevice

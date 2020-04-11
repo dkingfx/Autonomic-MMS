@@ -1,0 +1,6 @@
+{
+  "domain": "autonomic_mms",
+  "name": "Autonomic MMS",
+  "documentation": "https://www.home-assistant.io/integrations/pioneer",
+  "codeowners": []
+}
