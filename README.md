@@ -1,7 +1,2 @@
 # Autonomic_MMS Python API for Home Assistant Control
-The goal of this project is to create a Python API to control Autonomic MMS eSeries using Home Assistant with Custom Component.
-
-The MMS has a lot of features, I'm new to python coding so i know this is a big project to tacle as a beginer.
-
-
-Notes: I'm hoping the Russound RNET and Pymonoprice project can work for this API but it may need to be its own things with some similarities.
+The objective of this project is to develop a Python API that enables control of Autonomic MMS eSeries through Home Assistant with Custom Component integration. While the MMS has numerous features, I acknowledge that this undertaking may be challenging as I am new to Python coding. I am considering utilizing the Russound RNET and Pymonoprice projects as potential references, although the API may require its own unique implementation with some similarities.
